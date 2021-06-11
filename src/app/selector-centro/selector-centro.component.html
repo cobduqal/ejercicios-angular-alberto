@@ -1,0 +1,6 @@
+<p>Haga click sobre un centro para seleccionarlo</p>
+<!-- Las pipe parece que estan disponibles en los html pero no en los objetos ts. -->
+<input (keyup)="centro($event)" [value]="getCentroSeleccionado() | uppercase">
+<div *ngFor="let centro of getLovCentros()">
+    <p (click)="setCentroSeleccionado(centro)">{{centro.nombre}}</p>
+</div>

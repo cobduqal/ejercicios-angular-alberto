@@ -1,0 +1,23 @@
+<p [style.color]="+solicitud.nombre > 0.5 ? 'red' : 'blue'">solicitud works!</p>
+<p>{{solicitud.nombre}}</p>
+<!-- Al metodo se le pasa una cadena pero se podria pasar algun otro objeto -->
+<button (click)="delete('Mi mensaje')">Borrar (log)</button>
+
+<!-- Ejercicio 6. Se define un nuevo atributo name en el componente para no pisar el atributo nombre original de los ejercicios anteriores -->
+<h1>Solicitud de Comedor</h1>
+<p>Nueva solicitud</p>
+<label>Nombre</label>&nbsp;&nbsp;&nbsp;
+<input (keyup)="setNombre($event)">
+<br/>
+<label>Apellidos</label>&nbsp;
+<input (keyup)="setApellidos($event)">
+<!-- Ejercicio 7. Muestra el parrafo solo si el nombre y apellidos tienen valor -->
+<p *ngIf="validacion.isOk">Valor Introducido: {{solicitud.name}}&nbsp;{{solicitud.apellidos}}</p>
+<!-- Ejercicio 8. Mostrar bloques repetitivos con ngFor -->
+<table>
+    <tr><td>Nombre</td><td>Apellidos</td></tr>
+    <tr *ngFor="let solicitud of listaSolicitudes">
+        <td>{{solicitud.nombre}}</td>
+        <td>{{solicitud.apellidos}}</td>
+    </tr>
+</table>
